@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mainHome {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 98vh;
+}
+.logoHome{
+    padding-top: 150px;
+    padding-bottom: 100px;
+    width: 360px;
+    height: 200px;
+}
+
+.imagesH {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    width: 60%;
+}
+
+h3{
+    position: relative;
+    text-align: center;
+    left: 30%;
+}
+
+.menubk,
+.chefbk {
+    width: 106px;
+    height: 80px;
+}
+
+.btn-menu,
+.btn-chef {
+    background-color: #CB4F09;
+    width: 165px;
+    height: 110px;
+    border-radius: 5%;
+}
+
+footer {
+    display: flex;
+    background-color: #CB4F09;
+    justify-content: center;
+    font-weight: bold;
+}

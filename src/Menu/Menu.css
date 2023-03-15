@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.headerMenu {
+    background-color: #CB4F09;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: 50%;
+    top: 0%;
+}
+.logoMenu{
+    width: 116px;
+    height: 68px;
+}
+.inicio,
+.pedidos{
+    display: flex;
+    width: 66%;
+    height: 23%;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 1%;
+    color:white;
+    font-size:small;
+}
+.sect-input{
+    background-color: #0B0E12;
+    display: flex;
+    justify-content: space-around;
+    height: 91.2vh;
+}
+.input-name{
+    position: relative;
+    width: 370px;
+    height: 30px;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 2px solid #CB4F09;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+}
+.num-table{
+    width: 188px;
+    height: 30px;
+    margin-top: 20px;
+    background-color: black;
+    border: 2px solid #CB4F09;
+    border-radius: 4px;
+    color: white;
+}
+
