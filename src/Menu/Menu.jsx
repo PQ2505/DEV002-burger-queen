@@ -1,8 +1,20 @@
-import React, { Fragment } from "react";
+import { useState, useEffect } from "react";
 import Logo from "../assets/logo.png";
-import './Menu.css';
+import "./Menu.css";
+import axios from "axios";
 
 const Menu = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("data.json")
+      .then((res) => res.data)
+      .then((res) => {
+        setData(res.products);
+      });
+  }, []);
+
   return (
     <>
       <header className="headerMenu">
@@ -21,7 +33,9 @@ const Menu = () => {
           className="input-name"
         />
         <select name="numTable" className="num-table">
-          <option disabled selected>Mesa</option>
+          <option disabled selected>
+            Mesa
+          </option>
           <option value="Mesa1">Mesa 1</option>
           <option value="Mesa2">Mesa 2</option>
           <option value="Mesa3">Mesa 3</option>
@@ -29,6 +43,32 @@ const Menu = () => {
           <option value="Mesa5">Mesa 5</option>
         </select>
       </div>
+      <section className="menu">
+      <h4 className="hComida">MENÚ HAMBURGUESAS</h4>
+      <section className="foodContainer">
+        {data
+          .filter((product) => product.category.includes("Comida"))
+          .map((items) => (
+            <div key={items.id} className="CardComidas">
+              <img className="imgComida" src={items.img} alt="" />
+              <p className="namec">{items.name}</p>
+              <p className="namec">{items.price}</p>
+            </div>
+          ))}
+      </section>
+      <h4 className="hBebida">MENÚ BEBIDAS</h4>
+      <section className="drinksContainer">
+        {data
+          .filter((product) => product.category.includes("Bebida"))
+          .map((items) => (
+            <div key={items.id}className="CardBebidas">
+              <img className="imgBebida" src={items.img} alt="" />
+              <p className="nameb">{items.name}</p>
+              <p className="priceb">{items.price}</p>
+            </div>
+          ))}
+      </section>
+      </section>
       <footer>©Copyright - Paola Quiroga - 2023</footer>
     </>
   );
