@@ -59,7 +59,7 @@
     display: flex;
     flex-direction: row;
     color: white;
-    padding: 5%;
+    padding: 2%;
     width: 40%;
     flex-wrap: wrap;
     justify-content: center;
@@ -76,14 +76,14 @@
     flex-direction: column;
     margin-bottom: 15px;
     margin-right: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 4px;
 }
 .imgComida{
     display: flex;
     width: 90px;
     height: 57px;
     justify-content: center;
-    padding: 15px 15px 10px 20px;
+    padding: 2px 15px 2px 15px;
 }
 .namec,
 .pricec{
@@ -94,7 +94,7 @@
     display: flex;
     flex-direction: row;
     color: white;
-    padding: 5%;
+    padding: 2%;
     width: 40%;
     flex-wrap: wrap;
     justify-content: center;
@@ -105,19 +105,50 @@
     width: 90px;
     height: 57px;
     justify-content: center;
-    padding: 15px 15px 10px 20px;
+    padding: 2px 15px 2px 15px;
 }
 .nameb,
 .priceb{
     display: flex;
     justify-content: center;
 }
-.hComida,
+.hComida{
+    display: flex;
+    color: #CB4F09;
+    padding-left: 22px;
+    padding-top: 20px;
+    font-size: 25px;
+}
 .hBebida{
     display: flex;
     color: #CB4F09;
     padding-left: 80px;
-    padding-top: 20px;
+    padding-top: 1px;
     font-size: 25px;
 }
-
+.imgPlus{
+    position: relative;
+    width: 16px;
+    height: 15px;
+    top: 15px;
+    left: 10px;
+}
+.imgMinus{
+    position: relative;
+    width: 16px;
+    height: 15px;
+    left: 97px;
+}
+.imgPlusB{
+    position: relative;
+    width: 16px;
+    height: 15px;
+    top: 15px;
+    left: 10px;
+}
+.imgMinusB{
+    position: relative;
+    width: 16px;
+    height: 15px;
+    left: 97px;
+}

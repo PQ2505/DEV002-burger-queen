@@ -2,9 +2,13 @@ import { useState, useEffect } from "react";
 import Logo from "../assets/logo.png";
 import "./Menu.css";
 import axios from "axios";
+import AddProducts from "./AddProducts";
+import OrderSummary from "./OrderSummary";
+import AddToCart from "./AddToCart";
 
 const Menu = () => {
   const [data, setData] = useState([]);
+  const [addToOrder, setAddToOrder] = useState([]);
 
   useEffect(() => {
     axios
@@ -33,9 +37,7 @@ const Menu = () => {
           className="input-name"
         />
         <select name="numTable" className="num-table">
-          <option disabled selected>
-            Mesa
-          </option>
+          <option disabled value='Mesa'>Mesa</option>
           <option value="Mesa1">Mesa 1</option>
           <option value="Mesa2">Mesa 2</option>
           <option value="Mesa3">Mesa 3</option>
@@ -44,31 +46,45 @@ const Menu = () => {
         </select>
       </div>
       <section className="menu">
-      <h4 className="hComida">MENÚ HAMBURGUESAS</h4>
-      <section className="foodContainer">
-        {data
-          .filter((product) => product.category.includes("Comida"))
-          .map((items) => (
-            <div key={items.id} className="CardComidas">
-              <img className="imgComida" src={items.img} alt="" />
-              <p className="namec">{items.name}</p>
-              <p className="namec">{items.price}</p>
-            </div>
-          ))}
+        <h4 className="hComida">MENÚ HAMBURGUESAS</h4>
+        <section className="foodContainer">
+          {data
+            .filter((product) => product.category.includes("Comida"))
+            .map((items) => (
+              <div key={items.id} className="CardComidas">
+                <img className="imgComida" src={items.img} alt="" />
+                <p className="namec">{items.name}</p>
+                <p className="namec">${items.price}</p>
+                <AddProducts
+                  dataProduct={items}
+                  addOrder={addToOrder}
+                  setAddOrder={setAddToOrder}
+                />
+              </div>
+            ))}
+        </section>
+        <h4 className="hBebida">MENÚ BEBIDAS</h4>
+        <section className="drinksContainer">
+          {data
+            .filter((product) => product.category.includes("Bebida"))
+            .map((items) => (
+              <div key={items.id} className="CardBebidas">
+                <img className="imgBebida" src={items.img} alt="" />
+                <p className="nameb">{items.name}</p>
+                <p className="priceb">${items.price}</p>
+                <AddProducts
+                  dataProduct={items}
+                  addOrder={addToOrder}
+                  setAddOrder={setAddToOrder}
+                />
+              </div>
+            ))}
+        </section>
       </section>
-      <h4 className="hBebida">MENÚ BEBIDAS</h4>
-      <section className="drinksContainer">
-        {data
-          .filter((product) => product.category.includes("Bebida"))
-          .map((items) => (
-            <div key={items.id}className="CardBebidas">
-              <img className="imgBebida" src={items.img} alt="" />
-              <p className="nameb">{items.name}</p>
-              <p className="priceb">{items.price}</p>
-            </div>
-          ))}
-      </section>
-      </section>
+      <div className="order-summary">
+        <OrderSummary addOrder={addToOrder} setAddOrder={setAddToOrder} />
+      </div>
+      <AddToCart addOrder={addToOrder} />
       <footer>©Copyright - Paola Quiroga - 2023</footer>
     </>
   );

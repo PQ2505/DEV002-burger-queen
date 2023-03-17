@@ -4,42 +4,42 @@
             "id": "01",
             "name": "Sencilla",
             "category": "Comida",
-            "price": "$13.000",
+            "price": "13000",
             "img": "/img/sencilla.png"
         },
         {
             "id": "02",
             "name": "Doble",
             "category": "Comida",
-            "price": "$19.000",
+            "price": "19000",
             "img": "/img/doble.png"
         },
         {
             "id": "03",
             "name": "Pollo",
             "category": "Comida",
-            "price": "$17.000",
+            "price": "17000",
             "img": "/img/pollo.png"
         },
         {
             "id": "04",
             "name": "Gaseosa",
             "category": "Bebida",
-            "price": "$5.000",
+            "price": "5000",
             "img": "/img/gaseosa.png"
         },
         {
             "id": "05",
             "name": "Jugo Natural",
             "category": "Bebida",
-            "price": "$6.000",
+            "price": "6000",
             "img": "/img/jugo.png"
         },
         {
             "id": "06",
             "name": "Agua",
             "category": "Bebida",
-            "price": "$3.000",
+            "price": "3000",
             "img": "/img/agua.png"
         }
     ]
