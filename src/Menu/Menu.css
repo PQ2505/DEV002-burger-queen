@@ -126,29 +126,49 @@
     padding-top: 1px;
     font-size: 25px;
 }
-.imgPlus{
+.sect-btn-amount{
     position: relative;
-    width: 16px;
-    height: 15px;
-    top: 15px;
-    left: 10px;
+    height: 48px;
 }
-.imgMinus{
+.plus{
     position: relative;
     width: 16px;
     height: 15px;
-    left: 97px;
+    top: -18px;
+    right: 36px;
 }
-.imgPlusB{
+.minus{
     position: relative;
     width: 16px;
     height: 15px;
-    top: 15px;
-    left: 10px;
+    left: 39px;
+    top: 26px;
 }
-.imgMinusB{
+.plusB{
     position: relative;
     width: 16px;
     height: 15px;
-    left: 97px;
+    top: -18px;
+    right: 36px;
+}
+.minusB{
+    position: relative;
+    width: 16px;
+    height: 15px;
+    left: 39px;
+    top: 26px;
+}
+.ResumenP {
+    position: relative;
+    left: 352px;
+    width: 50%;
+    height: 87%;
+    bottom: 78vh;
+    border: 2px solid #CB4F09;
+    border-radius: 8px;
+    color: #CB4F09;
+}
+.titleResumen{
+    color: #CB4F09;
+    font-size: larger;
 }

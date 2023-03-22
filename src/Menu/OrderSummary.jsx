@@ -1,8 +1,8 @@
 import React from "react";
-import Swal from "sweetalert2";
+import "./Menu.css";
 
 
-const OrderSummary = ({ addOrder, setAddOrder }) => {
+const OrderSummary = ({ addOrder }) => {
 
     const priceProducts = addOrder.map(product => {
         /* Valida si el producto es burrito y realiza la suma de sus adicionales + el precio del producto */
@@ -15,28 +15,10 @@ const OrderSummary = ({ addOrder, setAddOrder }) => {
     const totalOrderPrice = priceProducts.reduce((price, sumPrice) => price + sumPrice, 0);
     // console.log(totalOrderPrice, 'precio')
 
-    const deleteOrder = () => {
-        Swal.fire({
-            title: '¿Estás seguro de eliminar el pedido?',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Eliminar'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                setAddOrder([]);
-            }
-        })
-    }
-
     return (
         <>
-            <section>
-                <h3>Resumen de pedido</h3>
-                <section className='delete-order'>
-                    <p onClick={deleteOrder}>Cancelar</p>
-                </section>
+            <section className="ResumenP">
+                <h3 className="titleResumen">RESUMEN DEL PEDIDO</h3>
                 {addOrder.map(product =>
                     <div key={product.id} >
                         <section className='product-summary'>
