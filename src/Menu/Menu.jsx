@@ -37,7 +37,9 @@ const Menu = () => {
           className="input-name"
         />
         <select name="numTable" className="num-table">
-          <option disabled value='Mesa'>Mesa</option>
+          <option disabled value="Mesa">
+            Mesa
+          </option>
           <option value="Mesa1">Mesa 1</option>
           <option value="Mesa2">Mesa 2</option>
           <option value="Mesa3">Mesa 3</option>
@@ -80,11 +82,12 @@ const Menu = () => {
               </div>
             ))}
         </section>
+
+        <div className="order-summary">
+          <OrderSummary addOrder={addToOrder} setAddOrder={setAddToOrder} />
+        </div>
+        <AddToCart addOrder={addToOrder} />
       </section>
-      <div className="order-summary">
-        <OrderSummary addOrder={addToOrder} setAddOrder={setAddToOrder} />
-      </div>
-      <AddToCart addOrder={addToOrder} />
       <footer>©Copyright - Paola Quiroga - 2023</footer>
     </>
   );

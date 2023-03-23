@@ -53,7 +53,6 @@
 }
 .menu{
     background-color: #0B0E12;
-    height: 86vh;
 }
 .foodContainer{
     display: flex;
@@ -159,16 +158,47 @@
     top: 26px;
 }
 .ResumenP {
-    position: relative;
+    position: absolute;
     left: 352px;
     width: 50%;
-    height: 87%;
-    bottom: 78vh;
+    height: 50vh;
+    bottom: 29vh;
     border: 2px solid #CB4F09;
     border-radius: 8px;
     color: #CB4F09;
 }
+.product-summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    font-size: 21px;
+}
 .titleResumen{
     color: #CB4F09;
-    font-size: larger;
+    font-size: x-large;
+    text-align: center;
+    left: 0px;
+}
+.total-order-price{
+    font-size:x-large
+}
+.btn-delete-order{
+    background: #CB4F09;
+    border-radius: 4px;
+    color:white;
+    width: 150px;
+    height: 30px;
+    position: relative;
+    top: 40vh;
+    left: 12vh;
+}
+.btn-save-order{
+    background: #CB4F09;
+    border-radius: 4px;
+    color: white;
+    width: 195px;
+    height: 35px;
+    position: relative;
+    bottom: 12vh;
+    left: 44vh;
 }
