@@ -14,6 +14,8 @@
 .logoMenu{
     width: 116px;
     height: 68px;
+    position: relative;
+    left: 1vh;
 }
 .inicio,
 .pedidos{
@@ -22,7 +24,7 @@
     height: 23%;
     justify-content: center;
     text-decoration: none;
-    margin-top: 1%;
+    margin-top: 2%;
     color:white;
     font-size:small;
 }
@@ -158,11 +160,11 @@
     top: 26px;
 }
 .ResumenP {
-    position: absolute;
+    position: relative;
     left: 352px;
     width: 50%;
     height: 50vh;
-    bottom: 29vh;
+    bottom: 76vh;
     border: 2px solid #CB4F09;
     border-radius: 8px;
     color: #CB4F09;
@@ -172,15 +174,33 @@
     justify-content: space-between;
     margin: 15px;
     font-size: 21px;
+    position: relative;
+    top: 2vh;
+    color: white;
+    p{
+        width: 32%;
+        text-align: left;
+    }
+}
+.order-summary{
+    position: relative;
+    height: 3.5vh;
 }
 .titleResumen{
     color: #CB4F09;
     font-size: x-large;
     text-align: center;
     left: 0px;
+    top: 2vh;
 }
 .total-order-price{
     font-size:x-large
+}
+.totalOrder{
+    position: absolute;
+    bottom: 6vh;
+    left: 50%;
+    color: white;
 }
 .btn-delete-order{
     background: #CB4F09;
@@ -188,8 +208,8 @@
     color:white;
     width: 150px;
     height: 30px;
-    position: relative;
-    top: 40vh;
+    position: absolute;
+    bottom: 1vh;
     left: 12vh;
 }
 .btn-save-order{
@@ -198,7 +218,7 @@
     color: white;
     width: 195px;
     height: 35px;
-    position: relative;
+    position: absolute;
     bottom: 12vh;
     left: 44vh;
 }

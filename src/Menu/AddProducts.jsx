@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Plus from "../assets/mas.png";
 import Minus from "../assets/menos.png";
-import './Menu.css'
+import './Menu.scss'
 
 const AddProducts = ({ dataProduct, addOrder, setAddOrder }) => {
     const [count, setCount] = useState(0);

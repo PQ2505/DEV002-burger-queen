@@ -1,12 +1,12 @@
 import { db } from "../Firebase/fb-config.js"
 import { collection, addDoc } from "firebase/firestore"
-import "./Menu.css";
+import "./Menu.scss";
 import Swal from "sweetalert2"
 
-const AddToCart = ({ addOrder }) => {
+const AddToCart = ({ addOrder, personName, tableSelect }) => {
     const uploadOrder = async () => {
        await addDoc(collection(db, "pedidos"),
-            { ...addOrder, state: 'Enviar a cocina', date: new Date() }
+            { ...addOrder, personName, tableSelect, state: 'Enviar a cocina', date: new Date() }
         )
     }
 
@@ -17,7 +17,9 @@ const validateInputName = () => {
     if (addOrder.length === 0) {
         Swal.fire({
             title: '<strong>Por favor agrega un producto</strong>',
-            icon: 'error'
+            icon: 'error',
+            background: '#0B0E12',
+            confirmButtonColor: '#CB4F09',
         })
     }
     else {
