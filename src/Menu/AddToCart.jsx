@@ -1,5 +1,6 @@
 import { db } from "../Firebase/fb-config.js"
 import { collection, addDoc } from "firebase/firestore"
+import "./Menu.scss";
 import Swal from "sweetalert2"
 
 const AddToCart = ({ addOrder, personName, tableSelect }) => {
@@ -13,21 +14,19 @@ const createOrder = () => {
     uploadOrder();
 }
 const validateInputName = () => {
-    if (personName === '' || tableSelect === 'Mesa') {
-        Swal.fire({
-            title: '<strong>Por favor rellena todos los campos</strong>',
-            icon: 'info'
-        })
-    } else if (addOrder.length === 0) {
+    if (addOrder.length === 0) {
         Swal.fire({
             title: '<strong>Por favor agrega un producto</strong>',
-            icon: 'error'
+            icon: 'error',
+            background: '#0B0E12',
+            confirmButtonColor: '#CB4F09',
         })
     }
     else {
         createOrder()
     }
 }
+
 return (
     <>
         
@@ -38,9 +37,10 @@ return (
                     validateInputName()
                 }}
             >
-                Enviar a cocina
+                ENVIAR A COCINA
             </button>
         </section>
+        
     </>
 )
 }

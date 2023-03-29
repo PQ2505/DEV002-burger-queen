@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Logo from "../assets/logo.png";
-import "./Menu.css";
+import "./Menu.scss";
 import axios from "axios";
 import AddProducts from "./AddProducts";
 import OrderSummary from "./OrderSummary";
@@ -9,6 +9,8 @@ import AddToCart from "./AddToCart";
 const Menu = () => {
   const [data, setData] = useState([]);
   const [addToOrder, setAddToOrder] = useState([]);
+  const [person, setPerson] = useState("");
+  const [table, setTable] = useState("Mesa");
 
   useEffect(() => {
     axios
@@ -19,6 +21,15 @@ const Menu = () => {
       });
   }, []);
 
+  const onCustomerName = (event) => {
+    setPerson(event.target.value);
+}
+const onTableSelect = (event) => {
+    setTable(
+        event.target.value
+    );
+}
+ 
   return (
     <>
       <header className="headerMenu">
@@ -35,9 +46,14 @@ const Menu = () => {
           type="text"
           placeholder="Nombre del cliente"
           className="input-name"
+          onChange={onCustomerName}
         />
-        <select name="numTable" className="num-table">
-          <option disabled value='Mesa'>Mesa</option>
+        <select name="numTable" className="num-table"
+        onChange={onTableSelect}
+        >
+          <option disabled value="Mesa">
+            Mesa
+          </option>
           <option value="Mesa1">Mesa 1</option>
           <option value="Mesa2">Mesa 2</option>
           <option value="Mesa3">Mesa 3</option>
@@ -59,6 +75,7 @@ const Menu = () => {
                   dataProduct={items}
                   addOrder={addToOrder}
                   setAddOrder={setAddToOrder}
+                  personName={person}
                 />
               </div>
             ))}
@@ -76,15 +93,24 @@ const Menu = () => {
                   dataProduct={items}
                   addOrder={addToOrder}
                   setAddOrder={setAddToOrder}
+                  personName={person}
                 />
               </div>
             ))}
         </section>
+
+        <div className="order-summary">
+          <OrderSummary 
+          addOrder={addToOrder} 
+          setAddOrder={setAddToOrder}
+          />
+        </div>
+        <AddToCart 
+        addOrder={addToOrder} 
+        tableSelect={table}
+        personName={person}
+        />
       </section>
-      <div className="order-summary">
-        <OrderSummary addOrder={addToOrder} setAddOrder={setAddToOrder} />
-      </div>
-      <AddToCart addOrder={addToOrder} />
       <footer>©Copyright - Paola Quiroga - 2023</footer>
     </>
   );

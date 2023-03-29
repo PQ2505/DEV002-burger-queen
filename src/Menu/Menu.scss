@@ -14,6 +14,8 @@
 .logoMenu{
     width: 116px;
     height: 68px;
+    position: relative;
+    left: 1vh;
 }
 .inicio,
 .pedidos{
@@ -22,7 +24,7 @@
     height: 23%;
     justify-content: center;
     text-decoration: none;
-    margin-top: 1%;
+    margin-top: 2%;
     color:white;
     font-size:small;
 }
@@ -53,7 +55,6 @@
 }
 .menu{
     background-color: #0B0E12;
-    height: 86vh;
 }
 .foodContainer{
     display: flex;
@@ -126,29 +127,98 @@
     padding-top: 1px;
     font-size: 25px;
 }
-.imgPlus{
+.sect-btn-amount{
     position: relative;
-    width: 16px;
-    height: 15px;
-    top: 15px;
-    left: 10px;
+    height: 48px;
 }
-.imgMinus{
+.plus{
     position: relative;
     width: 16px;
     height: 15px;
-    left: 97px;
+    top: -18px;
+    right: 36px;
 }
-.imgPlusB{
+.minus{
     position: relative;
     width: 16px;
     height: 15px;
-    top: 15px;
-    left: 10px;
+    left: 39px;
+    top: 26px;
 }
-.imgMinusB{
+.plusB{
     position: relative;
     width: 16px;
     height: 15px;
-    left: 97px;
+    top: -18px;
+    right: 36px;
+}
+.minusB{
+    position: relative;
+    width: 16px;
+    height: 15px;
+    left: 39px;
+    top: 26px;
+}
+.ResumenP {
+    position: relative;
+    left: 352px;
+    width: 50%;
+    height: 50vh;
+    bottom: 76vh;
+    border: 2px solid #CB4F09;
+    border-radius: 8px;
+    color: #CB4F09;
+}
+.product-summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+    font-size: 21px;
+    position: relative;
+    top: 2vh;
+    color: white;
+    p{
+        width: 32%;
+        text-align: left;
+    }
+}
+.order-summary{
+    position: relative;
+    height: 3.5vh;
+}
+.titleResumen{
+    color: #CB4F09;
+    font-size: x-large;
+    text-align: center;
+    left: 0px;
+    top: 2vh;
+}
+.total-order-price{
+    font-size:x-large
+}
+.totalOrder{
+    position: absolute;
+    bottom: 6vh;
+    left: 50%;
+    color: white;
+}
+.btn-delete-order{
+    background: #CB4F09;
+    border-radius: 4px;
+    color:white;
+    width: 150px;
+    height: 30px;
+    position: absolute;
+    bottom: 1vh;
+    left: 12vh;
+}
+.btn-save-order{
+    background: #CB4F09;
+    border-radius: 4px;
+    color: white;
+    width: 195px;
+    height: 35px;
+    position: absolute;
+    bottom: 12vh;
+    left: 44vh;
 }
